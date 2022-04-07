@@ -13,7 +13,7 @@ const getCategoryHandler: (
         console.log(`Accessing subcat endpoint`)
         const browser = await puppeteer.launch();
         const categoryService = new CategoryService(browser, cat, subcat);
-        const apps = categoryService.crawlSubCategory();
+        const apps = await categoryService.crawlSubCategory();
         console.log(apps)
         return apps
     } catch (error) {
